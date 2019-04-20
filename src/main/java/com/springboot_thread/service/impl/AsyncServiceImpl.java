@@ -20,7 +20,11 @@ public class AsyncServiceImpl implements AsyncService {
 
         System.out.println("异步线程要做的事情");
         System.out.println("可以在这里执行批量插入等耗时的事情");
-
+        try {
+            Thread.currentThread().sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         logger.info("end executeAsync");
     }
 }
