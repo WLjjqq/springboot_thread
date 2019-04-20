@@ -1,0 +1,39 @@
+server:
+  port: 9000
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: localhost
+    port: 6379
+
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.springboot_thread.bean
+#showSql
+logging:
+  level:
+    com:
+      shiro:
+        springbootshiro:
+          mapper : debug
+
+# 异步线程配置
+# 配置核心线程数
+  async:
+    executor:
+      thread:
+        core_pool_size: 5
+
+  # 配置最大线程数
+        max_pool_size: 5
+  # 配置队列大小
+        queue_capacity: 99999
+  # 配置线程池中的线程的名称前缀
+        name:
+          prefix: async-service-
