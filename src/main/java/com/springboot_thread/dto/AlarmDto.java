@@ -1,12 +1,14 @@
 package com.springboot_thread.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.util.Date;
 @Data
 public class AlarmDto {
-    @JsonProperty(value = "Created",index = 0)
+    @JsonProperty(value = "Created",index = 0)   //给这个字段起别名，就是输出的时候是什么。在第几个
+    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.sss'Z'",timezone = "GMT+8")  //自定义输出格式
     private Date created;
     @JsonProperty(value = "Principal",index = 1)
     private String principal;
@@ -16,8 +18,8 @@ public class AlarmDto {
     private String orderNo;
     @JsonProperty(value = "OrderRowNo",index = 4)
     private String orderRowNo;
-    @JsonProperty(value = "technics",index = 5)
-    private String Technics;
+    @JsonProperty(value = "Technics",index = 5)
+    private String technics;
     @JsonProperty(value = "Min",index = 6)
     private Double min;
     @JsonProperty(value = "Max",index = 7)
