@@ -10,4 +10,11 @@ public interface AlarmService {
      * @return
      */
     AlarmDto selectAlarm(Integer alarmId);
+
+    /**
+     * 插入报警信息
+     * @param alarmDto
+     * @return
+     */
+    int insertAlarm(AlarmDto alarmDto);
 }

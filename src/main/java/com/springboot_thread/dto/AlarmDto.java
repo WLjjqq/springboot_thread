@@ -29,7 +29,19 @@ public class AlarmDto {
     @JsonProperty(value = "Duration",index = 9)
     private Integer duration;
 
-    public static void main(String[] args) {
-        AlarmDto alarmDto = new AlarmDto();
+    public AlarmDto() {
+    }
+
+    public AlarmDto(Date created, String principal, String supplierName, String orderNo, String orderRowNo, String technics, Double min, Double max, Double value, Integer duration) {
+        this.created = created;
+        this.principal = principal;
+        this.supplierName = supplierName;
+        this.orderNo = orderNo;
+        this.orderRowNo = orderRowNo;
+        this.technics = technics;
+        this.min = min;
+        this.max = max;
+        this.value = value;
+        this.duration = duration;
     }
 }

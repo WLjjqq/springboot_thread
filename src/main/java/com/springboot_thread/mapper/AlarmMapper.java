@@ -18,4 +18,11 @@ public interface AlarmMapper {
      * @return
      */
     AlarmDto selectAlarm(@Param("alarmId") Integer alarmId);
+
+    /**
+     * 插入一条报警信息
+     * @param alarmDto
+     * @return
+     */
+    int insertAlarm(AlarmDto alarmDto);
 }
