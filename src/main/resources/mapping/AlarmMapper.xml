@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot_thread.mapper.AlarmMapper">
+	<resultMap type="com.springboot_thread.dto.AlarmDto" id="BaseResultMap">
+		<result property="created" column="created" />
+		<result property="principal" column="principal" />
+		<result property="supplierName" column="supplier_name" />
+		<result property="orderNo" column="order_no" />
+		<result property="orderRowNo" column="order_row_no" />
+		<result property="technics" column="technics" />
+		<result property="min" column="min" />
+		<result property="max" column="max" />
+		<result property="value" column="value" />
+		<result property="duration" column="duration" />
+	</resultMap>
+
+<select id="selectAlarm" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+	select created,principal,supplier_name,order_no,order_row_no,technics,min,max,value,duration
+	from alarm
+	where alarm_id = #{alarmId}
+	limit 1
+</select>
+</mapper>

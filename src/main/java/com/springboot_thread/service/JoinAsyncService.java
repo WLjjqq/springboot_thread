@@ -1,6 +1,6 @@
 package com.springboot_thread.service;
 
-public interface MyAsyncService {
+public interface JoinAsyncService {
 
     /**
      * 执行异步任务
